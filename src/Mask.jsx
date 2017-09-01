@@ -75,10 +75,12 @@ export default class Mask extends PureComponent {
   }
 
   setSelectionRange(lastIndex) {
-    const input = getInput(this);
-    if (input === document.activeElement) {
-      input.setSelectionRange(lastIndex, lastIndex);
-    }
+    setTimeout(() => {
+      const input = getInput(this);
+      if (input === document.activeElement) {
+        input.setSelectionRange(lastIndex, lastIndex);
+      }
+    }, 0)
   }
 
   registerInput = input => registerInput(this, input);
